@@ -14,7 +14,6 @@ public class GameState : MonoBehaviour
 
     private void Pause()
     {
-
         if (IsPause)
         {
             _menuPanel.SetActive(true);
