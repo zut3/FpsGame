@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class InteractofPlatform : Interact
+public sealed class InteractofPlatform : Interact
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _duck;
     [SerializeField] private GameObject _button;
     [SerializeField] private GameObject _Platformcamera;
     [SerializeField] private Transform _spawn;
-    private Platform _platformControll;
+    [SerializeField] private Platform _platformControll;
     [SerializeField] private GameObject _platform;
 
     private void Update()
@@ -19,17 +19,13 @@ public class InteractofPlatform : Interact
 
     private void CheckPlatform()
     {
-        Platform plat = hit.collider.gameObject.GetComponent<Platform>();
-        if (plat)
+        if( hit.transform && hit.transform.GetComponent<Platform>())
         {
             _button.SetActive(true);
-            _platformControll = plat;
-            Debug.DrawRay(_ray.origin, _ray.direction, Color.red);
         }
         else
         {
             _button.SetActive(false);
-            _platformControll = null;
         }
     }
 

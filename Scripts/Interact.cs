@@ -7,7 +7,6 @@ public class Interact : MonoBehaviour
 
     protected Ray _ray;
     protected RaycastHit hit;
-    protected float MaxDistanceRay = 4f;
 
 
     protected void Ray()
@@ -17,11 +16,6 @@ public class Interact : MonoBehaviour
 
     protected void Raycast()
     {
-
-        if (Physics.Raycast(_ray, out hit, MaxDistanceRay))
-        {
-            Debug.DrawRay(_ray.origin, _ray.direction, Color.blue);
-        }
-
+        Physics.Raycast(_ray, out hit);
     }
 }
