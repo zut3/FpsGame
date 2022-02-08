@@ -4,10 +4,10 @@ public class Interact : MonoBehaviour
 {
 
     [SerializeField] protected Camera _camera;
-    
+
     protected Ray _ray;
     protected RaycastHit hit;
-    [SerializeField] protected float MaxDistanceRay = 4f;
+    protected float MaxDistanceRay = 4f;
 
 
     protected void Ray()
@@ -17,10 +17,11 @@ public class Interact : MonoBehaviour
 
     protected void Raycast()
     {
-        if(Physics.Raycast(_ray, out hit, MaxDistanceRay))
+
+        if (Physics.Raycast(_ray, out hit, MaxDistanceRay))
         {
-            Debug.DrawRay(_ray.origin , _ray.direction , Color.blue);
+            Debug.DrawRay(_ray.origin, _ray.direction, Color.blue);
         }
-        
+
     }
 }

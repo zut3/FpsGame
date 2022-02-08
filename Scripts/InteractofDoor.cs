@@ -7,15 +7,12 @@ public class InteractofDoor : Interact
 
     private void Update()
     {
-        Ray();
-        Raycast();
         InteractDoor();
     }
     private void InteractDoor()
     {
-        if (hit.transform != null && hit.transform.GetComponent<Door>())
+        if (hit.transform && hit.transform.GetComponent<Door>())
         {
-            Debug.DrawRay(_ray.origin, _ray.direction * MaxDistanceRay, Color.blue);
             _Openbutton.SetActive(true);
             _RayInDoor = true;
 
@@ -29,17 +26,12 @@ public class InteractofDoor : Interact
 
 
 
-    private void OpenDoor()
+    public void OpenDoor()
     {
         if (_RayInDoor)
         {
             hit.collider.gameObject.GetComponent<Door>().Open();
         }
-    }
-
-    public void ClickOpenButton()
-    {
-        OpenDoor();
     }
 
 }

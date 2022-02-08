@@ -14,10 +14,10 @@ public class LoseControll : MonoBehaviour
 
     void Update()
     {
-        if(_player.position.y < -5f)
+        if (_player.position.y < -5f)
         {
-            Invoke(nameof(RestartGame) , 1f);
-        }        
+            Invoke(nameof(RestartGame), 1f);
+        }
     }
 
 
