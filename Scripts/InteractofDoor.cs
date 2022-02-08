@@ -7,6 +7,8 @@ public class InteractofDoor : Interact
 
     private void Update()
     {
+        Ray();
+        Raycast();
         InteractDoor();
     }
     private void InteractDoor()

@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
     [SerializeField] private Joystick _joystick;
     [SerializeField] private float _speed;
+    [SerializeField] private InteractofPlatform _interactofPlatform;
 
     private void Update()
     {
@@ -20,7 +20,7 @@ public class Platform : MonoBehaviour
     {
         if (collision.collider.CompareTag("Obstacle"))
         {
-            Debug.Log("Boom!");
+            _interactofPlatform.ExitfromPlatform();        
         }
     }
 }
