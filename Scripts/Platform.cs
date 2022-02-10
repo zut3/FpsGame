@@ -10,9 +10,8 @@ public class Platform : MonoBehaviour
     private void Update()
     {
         float horisontal = _joystick.Horizontal;
-        float vertical = _joystick.Vertical;
 
-        Vector3 offset = new Vector3(vertical, 0, -horisontal) * Time.deltaTime * _speed;
+        Vector3 offset = new Vector3(1, 0, -horisontal) * Time.deltaTime * _speed;
         transform.Translate(offset);
     }
 
